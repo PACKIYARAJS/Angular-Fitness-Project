@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h1>Create Account</h1>
+    <div class="row mt-4">
+        <div class="col">First Name</div>
+        <div class="col"><input type="text" name="SignUp" [(ngModel)] ="FirstName"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">Last Name</div>
+        <div class="col"><input type="text" name="SignUp" [(ngModel)] ="LastName"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">Age</div>
+        <div class="col"><input type="number" name="SignUp" [(ngModel)] ="Age"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">Gender</div>
+        <div class="col">Male <input type="radio" name="Gender" value="Male" [(ngModel)] ="Gender"/></div>
+        <div class="col">Female <input type="radio" name="Gender" value="Female" [(ngModel)] ="Gender"/></div>
+        <div class="col">Trans <input type="radio" name="Gender" value="Trans" [(ngModel)] ="Gender"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">E-mail</div>
+        <div class="col"><input type="email" name="SignUp" [(ngModel)] ="Email"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col">Contact Number</div>
+        <div class="col"><input type="number" name="SignUp" [(ngModel)] ="ContactNumber"/></div>
+    </div>
+    <div class="row mt-4">
+        <div class="col"></div>
+        <div class="col"><button type="button" class="btn btn-success" (click)="Create()">SignUp</button></div>
+    </div>
+</div>
