@@ -9,22 +9,26 @@ import { FormsModule } from '@angular/forms'
   styleUrl: './create-account.component.scss'
 })
 export class CreateAccountComponent {
-    FirstName = '';
-    LastName = '';
-    Age=0;
+    FirstName:String = '';
+    LastName:String = '';
+    UserName:String = '';
+    Age:Number = 0;
     Gender = '';
     Email = '';
-    ContactNumber = 0;
+    ContactNumber:Number = 0;
+    Password:String = '';
 
     Create(){
 
       let request={
         FirstName : this.FirstName,
         LastName : this.LastName,
+        UserName : this.UserName,
         Age : this.Age,
         Gender : this.Gender, 
         Email : this.Email,
         ContactNumber : this.ContactNumber,
+        Password : this.Password
       }
       console.log(request);
     }

@@ -1,2 +1,6 @@
-{{title}}
-<app-create-account></app-create-account>
+<h1 style="text-align: center;">{{title}}</h1>
+<a type="button" [routerLink] = "['create-account']" class="btn btn-primary m-2">Create Account</a>
+<button class="btn btn-primary m-2" (click)="goTOLogin()">Login</button>
+<button class="btn btn-primary m-2" (click)="goTOLogout()">Logout</button>
+<button class="btn btn-primary m-2" (click)="goTOMemberShip()">MemberShip</button>
+<router-outlet></router-outlet>
