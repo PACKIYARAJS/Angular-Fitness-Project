@@ -35,5 +35,9 @@ export class AppComponent {
     this.router.navigate(['/member-ship']);
   }
 
+  goToView()
+  {
+    this.router.navigate(['/view-account']);
+  }
 
 }
