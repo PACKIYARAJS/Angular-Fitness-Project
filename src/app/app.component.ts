@@ -40,4 +40,9 @@ export class AppComponent {
     this.router.navigate(['/view-account']);
   }
 
+  goToAdmin()
+  {
+    this.router.navigate(['admin-account']);
+  }
+
 }

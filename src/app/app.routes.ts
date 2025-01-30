@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AdminAccountComponent } from './HomePage/admin-account/admin-account.component';
 import { CreateAccountComponent } from './HomePage/create-account/create-account.component';
 import { LoginComponent } from './HomePage/login/login.component';
 import { LogoutComponent } from './HomePage/logout/logout.component';
@@ -10,5 +11,6 @@ export const routes: Routes = [
     {path : 'login', component : LoginComponent},
     {path : 'logout', component : LogoutComponent},
     {path : 'member-ship', component : MemberShipComponent},
-    {path : 'view-account', component : ViewAccountComponent}
+    {path : 'view-account', component : ViewAccountComponent},
+    {path : 'admin-account', component : AdminAccountComponent}
 ];

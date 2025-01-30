@@ -1,0 +1,28 @@
+<h1>Admin Account</h1>
+
+<button type="button" class="btn btn-primary" (click)="showData = !showData">Show Data</button>
+
+<div class="container mt-4">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th *ngIf="showData">Company Name</th>
+                <th *ngIf="showData">Role</th>
+                <th *ngIf="showData">Phone Number</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of account">
+                <td>{{record.id}}</td>
+                <td>{{record.Name}}</td>
+                <td *ngIf="showData">{{record.CompanyName}}</td>
+                <td *ngIf="showData">{{record.Role}}</td>
+                <td *ngIf="showData">{{record.PhoneNumber}}</td>
+                <td>{{record.Email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
