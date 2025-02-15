@@ -4,7 +4,7 @@ import { RouterLink, RouterModule, RouterOutlet, Router } from '@angular/router'
 import { CreateAccountComponent } from './HomePage/create-account/create-account.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './HomePage/login/login.component';
-
+  
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,6 +18,11 @@ export class AppComponent {
   //router: Router = new Router;  // Difficult way
 
   constructor (private router : Router){} //Dependency Injection
+
+  goToReg()
+  {
+    this.router.navigate(['/create-account']);
+  }
 
   goTOLogin()
   {

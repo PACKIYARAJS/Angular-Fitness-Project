@@ -1,8 +1,31 @@
-<h1 style="text-align: center;">{{title}}</h1>
-<a type="button" [routerLink] = "['create-account']" class="btn btn-primary m-2">Create Account</a>
-<button class="btn btn-primary m-2" (click)="goTOLogin()">Login</button>
-<button class="btn btn-primary m-2" (click)="goTOLogout()">Logout</button>
-<button class="btn btn-primary m-2" (click)="goTOMemberShip()">MemberShip</button>
-<button class="btn btn-primary m-2" (click)="goToView()">View Account</button>
-<button class="btn btn-primary m-2" (click)="goToAdmin()">Admin Account</button>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <img src="../assets/Home_Page_Image.jpg">
+      <a class="navbar-brand">Fitness</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['training']">Training</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['diet']">Diet Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['aboutus']">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['contactus']">Contact us</a>
+          </li>
+        </ul>
+          <button type="button" class="btn" (click)="goTOLogin()">Login</button>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fulid">
+    <router-outlet></router-outlet>
+  </div>

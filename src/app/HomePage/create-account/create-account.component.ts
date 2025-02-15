@@ -1,10 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { create } from 'domain';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-create-account',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule, RouterOutlet],
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.scss'
 })
@@ -18,7 +22,9 @@ export class CreateAccountComponent {
     ContactNumber:Number = 0;
     Password:String = '';
 
-    Create(){
+    constructor(private api:ApiService,private router:Router){}
+
+    CreateData(){
 
       let request={
         FirstName : this.FirstName,
@@ -30,6 +36,12 @@ export class CreateAccountComponent {
         ContactNumber : this.ContactNumber,
         Password : this.Password
       }
-      console.log(request);
+      this.api.create(request).subscribe(
+        ()=>{
+          alert('Registration successfully....')
+          this.router.navigate(['/login']);
+        },
+        err=>{console.log(err)}
+      );
     }
 }

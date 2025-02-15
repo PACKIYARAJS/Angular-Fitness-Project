@@ -8,20 +8,28 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th *ngIf="showData">Company Name</th>
-                <th *ngIf="showData">Role</th>
-                <th *ngIf="showData">Phone Number</th>
+                <th>UserName</th>
+                <th>Age</th>
+                <th>Gender</th>
                 <th>Email</th>
+                <th *ngIf="showData">Contact Number</th>
+                <th *ngIf="showData">Password</th>
             </tr>
+
         </thead>
         <tbody>
             <tr *ngFor="let record of account">
                 <td>{{record.id}}</td>
-                <td>{{record.Name}}</td>
-                <td *ngIf="showData">{{record.CompanyName}}</td>
-                <td *ngIf="showData">{{record.Role}}</td>
-                <td *ngIf="showData">{{record.PhoneNumber}}</td>
+                <td>{{record.FirstName}} {{record.LastName}}</td>
+                <td>{{record.UserName}}</td>
+                <td>{{record.Age}}</td>
+                <td>{{record.Gender}}</td>
                 <td>{{record.Email}}</td>
+                <td *ngIf="showData">{{record.ContactNumber}}</td>
+                <td *ngIf="showData">{{record.Password}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteData(record)">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>

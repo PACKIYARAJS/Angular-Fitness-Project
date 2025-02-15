@@ -30,9 +30,17 @@ export class AdminAccountComponent implements OnInit{
       err =>{
         console.log(err);
       }
-
     )
+  }
 
+  deleteData(data:any)
+  {
+    this.api.delete(data.id).subscribe(
+      ()=>{
+        this.getDataValue();
+      },
+      err=>{console.log(err)}
+    );
   }
 
 }

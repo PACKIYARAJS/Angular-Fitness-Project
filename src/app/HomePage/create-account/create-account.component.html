@@ -1,41 +1,43 @@
 <div class="container mt-4">
     <h1>Create Account</h1>
-    <div class="row mt-4">
-        <div class="col">First Name</div>
-        <div class="col"><input type="text" placeholder="Enter the First Name" name="SignUp" [(ngModel)] ="FirstName"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">Last Name</div>
-        <div class="col"><input type="text" placeholder="Enter the Last Name" name="SignUp" [(ngModel)] ="LastName"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">User Name</div>
-        <div class="col"><input type="text" placeholder="Enter the User Name" name="SignUp" [(ngModel)] ="UserName"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">Age</div>
-        <div class="col"><input type="number" placeholder="Enter the Age" name="SignUp" [(ngModel)] ="Age"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">Gender</div>
-        <div class="col">Male <input type="radio" name="Gender" value="Male" [(ngModel)] ="Gender"/></div>
-        <div class="col">Female <input type="radio" name="Gender" value="Female" [(ngModel)] ="Gender"/></div>
-        <div class="col">Trans <input type="radio" name="Gender" value="Trans" [(ngModel)] ="Gender"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">E-mail</div>
-        <div class="col"><input type="email" placeholder="Enter the email id" name="SignUp" [(ngModel)] ="Email"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">Contact Number</div>
-        <div class="col"><input type="number" placeholder="Enter the Contact Number" name="SignUp" [(ngModel)] ="ContactNumber"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col">Password</div>
-        <div class="col"><input type="password" placeholder="Enter the Password" name="SignUp" [(ngModel)] ="Password"/></div>
-    </div>
-    <div class="row mt-4">
-        <div class="col"></div>
-        <div class="col"><button type="button" class="btn btn-success" (click)="Create()">SignUp</button></div>
-    </div>
+    <form>
+        <div class="row mt-4">
+            <div class="col">First Name</div>
+            <div class="col"><input type="text" placeholder="Enter the First Name" name="SignUp" [(ngModel)] ="FirstName"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Last Name</div>
+            <div class="col"><input type="text" placeholder="Enter the Last Name" name="SignUp" [(ngModel)] ="LastName"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">User Name</div>
+            <div class="col"><input type="text" placeholder="Enter the User Name" name="SignUp" [(ngModel)] ="UserName"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Age</div>
+            <div class="col"><input type="number" placeholder="Enter the Age" name="SignUp" [(ngModel)] ="Age"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Gender</div>
+            <div class="col">Male <input type="radio" name="Gender" value="Male" [(ngModel)] ="Gender"/></div>
+            <div class="col">Female <input type="radio" name="Gender" value="Female" [(ngModel)] ="Gender"/></div>
+            <div class="col">Trans <input type="radio" name="Gender" value="Trans" [(ngModel)] ="Gender"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">E-mail</div>
+            <div class="col"><input type="email" placeholder="Enter the email id" name="SignUp" [(ngModel)] ="Email"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Contact Number</div>
+            <div class="col"><input type="number" placeholder="Enter the Contact Number" name="SignUp" [(ngModel)] ="ContactNumber"/></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Password</div>
+            <div class="col"><input type="password" placeholder="Enter the Password" name="SignUp" [(ngModel)] ="Password"/></div>
+        </div>  
+        <div class="row mt-4">
+            <div class="col"><button type="reset" class="btn btn-success">Reset</button></div>
+            <div class="col"><button type="button" class="btn btn-success" (click)="CreateData()">Sumbit</button></div>
+        </div>
+    </form>
 </div>
