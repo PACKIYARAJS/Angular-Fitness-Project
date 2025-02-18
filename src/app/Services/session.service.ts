@@ -8,16 +8,16 @@ export class SessionService {
 
   constructor(private router:Router) { }
 
-  isSessionAvailable()
-  {
-    let UserID =  sessionStorage.getItem('UserId') || '';
+  // isSessinAvailable()
+  // {
+  //   let UserID =  sessionStorage.getItem('UserId') || '';
 
-    if(UserID='')
-    {
-      return false;
-    } 
-    return true;
-  }
+  //   if(UserID='')
+  //   {
+  //     return false;
+  //   } 
+  //   return true;
+  // }
 
   LogoutSession()
   {
@@ -32,7 +32,7 @@ export class SessionService {
 
   validateUser()
   {
-    let User = sessionStorage.getItem('UserId');
+    let User = sessionStorage.getItem('UserId') || '';
 
     if(User =='')
     {

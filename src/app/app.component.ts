@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterModule, RouterOutlet, Router } from '@angular/router';
+import { RouterModule, RouterOutlet, Router } from '@angular/router';
 import { CreateAccountComponent } from './HomePage/create-account/create-account.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './HomePage/login/login.component';
 import { SessionService } from './Services/session.service';
+import { FooterComponent } from './footer/footer/footer.component';
   
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CreateAccountComponent, FormsModule, RouterModule, LoginComponent],
+  imports: [CommonModule, RouterOutlet, CreateAccountComponent, FormsModule, RouterModule, LoginComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

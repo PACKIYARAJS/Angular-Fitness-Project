@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { FooterComponent } from './footer/footer/footer.component';
 import { AboutusComponent } from './HomePage/aboutus/aboutus.component';
 import { AdminAccountComponent } from './HomePage/admin-account/admin-account.component';
 import { ContactusComponent } from './HomePage/contactus/contactus.component';
@@ -25,5 +26,6 @@ export const routes: Routes = [
     {path : 'contactus', component : ContactusComponent},
     {path : 'training', component : TrainingComponent},
     {path : 'diet', component : DietComponent},
-    {path : 'profile', component : ProfileComponent}
+    {path : 'profile', component : ProfileComponent},
+    {path : 'footer', component: FooterComponent}
 ];
