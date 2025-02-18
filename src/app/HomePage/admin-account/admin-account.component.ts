@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { apiUrls } from '../../Constants/globalConstants';
 import { ApiService } from '../../Services/api.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class AdminAccountComponent implements OnInit{
 
   getDataValue(){
 
-    this.api.getData().subscribe(
+    this.api.getData(apiUrls.UserApi).subscribe(
       (res : any)=>{
         this.account = res;
       },
@@ -35,7 +36,7 @@ export class AdminAccountComponent implements OnInit{
 
   deleteData(data:any)
   {
-    this.api.delete(data.id).subscribe(
+    this.api.delete(apiUrls.UserApi,data.id).subscribe(
       ()=>{
         this.getDataValue();
       },

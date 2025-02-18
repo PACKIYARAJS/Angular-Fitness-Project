@@ -25,9 +25,16 @@ img{
 .navbar-nav a:hover{
     text-decoration:2px underline green;
 }
-.btn{
+.Login{
     color: white;
     background-color: limegreen;
+}
+nav .profile{
+    position: absolute;
+    margin-left: -26%;
+    font-style: oblique;
+    font-weight: 700 !important;
+    color: blueviolet !important;
 }
 #navbarSupportedContent{
     margin-left: 7%;

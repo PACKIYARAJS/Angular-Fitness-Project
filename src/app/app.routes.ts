@@ -10,6 +10,7 @@ import { LogoutComponent } from './HomePage/logout/logout.component';
 import { MemberShipComponent } from './HomePage/member-ship/member-ship.component';
 import { TrainingComponent } from './HomePage/training/training.component';
 import { ViewAccountComponent } from './HomePage/view-account/view-account.component';
+import { ProfileComponent } from './profilePage/profile/profile.component';
 
 export const routes: Routes = [
     {path :'', redirectTo:'home', pathMatch:'full'},
@@ -24,4 +25,5 @@ export const routes: Routes = [
     {path : 'contactus', component : ContactusComponent},
     {path : 'training', component : TrainingComponent},
     {path : 'diet', component : DietComponent},
+    {path : 'profile', component : ProfileComponent}
 ];

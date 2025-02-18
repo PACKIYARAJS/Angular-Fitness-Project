@@ -9,20 +9,20 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getData(){
+  getData(apiUrl:string){
 
-   return this.http.get('https://retoolapi.dev/rIW3fl/data/');
+   return this.http.get(apiUrl);
 
   }
 
-  create(requestbody:any)
+  create(apiUrl:string, requestbody:any)
   {
-    return this.http.post('https://retoolapi.dev/rIW3fl/data/', requestbody);
+    return this.http.post(apiUrl, requestbody);
   }
 
-  delete(data:any)
+  delete(apiUrl:string, data:any)
   {
-    return this.http.delete('https://retoolapi.dev/rIW3fl/data/'+data);
+    return this.http.delete(apiUrl+data);
   }
 
 }

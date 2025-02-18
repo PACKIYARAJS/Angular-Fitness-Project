@@ -9,11 +9,15 @@
 
         <div class="row mt-4">
             <div class="col">First Name</div>
-            <div class="col"><input type="text" id="FirstName" placeholder="Enter the First Name" name="FirstName" formControlName ="FirstName"/></div>
+            <div class="col"><input type="text" id="FirstName" placeholder="Enter the First Name" name="FirstName" formControlName ="FirstName"/>
+                <div *ngIf="registerForm.get('FirstName')?.hasError('required') && isSubmitted" class="text-danger"> FirstName is Mandatory</div>
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col">Last Name</div>
-            <div class="col"><input type="text" id="LastName" placeholder="Enter the Last Name" name="LastName" formControlName ="LastName"/></div>
+            <div class="col"><input type="text" id="LastName" placeholder="Enter the Last Name" name="LastName" formControlName ="LastName"/>
+                <div *ngIf="registerForm.get('LastName')?.hasError('required') && isSubmitted" class="text-danger">LastName is Mandatory</div>
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col">User Name</div>
@@ -23,17 +27,21 @@
         </div>
         <div class="row mt-4">
             <div class="col">Age</div>
-            <div class="col"><input type="number" id="Age" placeholder="Enter the Age" name="Age" formControlName ="Age"/></div>
+            <div class="col"><input type="number" id="Age" placeholder="Enter the Age" name="Age" formControlName ="Age"/>
+                <div *ngIf="registerForm.get('Age')?.hasError('required') && isSubmitted" class="text-danger"> Enter the age</div>
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col">Gender</div>
-            <div class="col">Male <input type="radio" id="Gender" name="Gender" value="Male" formControlName ="Gender"/></div>
-            <div class="col">Female <input type="radio" id="Gender" name="Gender" value="Female" formControlName ="Gender"/></div>
-            <div class="col">Trans <input type="radio" id="Gender" name="Gender" value="Trans" formControlName ="Gender"/></div>
+            <div class="col">Male <input type="radio" id="mGender" name="Gender" value="Male" formControlName ="Gender"/></div>
+            <div class="col">Female <input type="radio" id="FGender" name="Gender" value="Female" formControlName ="Gender"/></div>
+            <div class="col">Trans <input type="radio" id="TGender" name="Gender" value="Trans" formControlName ="Gender"/></div>
         </div>
         <div class="row mt-4">
             <div class="col">E-mail</div>
-            <div class="col"><input type="email" id="Email" placeholder="Enter the email id" name="Email" formControlName ="Email"/></div>
+            <div class="col"><input type="email" id="Email" placeholder="Enter the email id" name="Email" formControlName ="Email"/>
+                <div *ngIf="registerForm.get('Email')?.hasError('required') && isSubmitted" class="text-danger"> Email is Mandatory</div>
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col">Contact Number</div>
@@ -49,11 +57,13 @@
         </div>  
         <div class="row mt-4">
             <div class="col">Confirm Password</div>
-            <div class="col"><input type="password" id="ConfirmPassword" placeholder="Enter the Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/></div>
+            <div class="col"><input type="password" id="ConfirmPassword" placeholder="Enter the Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
+                <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('required') && isSubmitted" class="text-danger"> Confirm Password should have a minimum lenght of 8 characters</div>
+            </div>
         </div> 
         <div class="row mt-4">
             <div class="col"><button type="reset" class="btn btn-success">Reset</button></div>
-            <div class="col"><button type="button" class="btn btn-success" (click)="CreateData()">Sumbit</button></div>
+            <div class="col"><button type="button" class="btn btn-success" (click)="CreateData()">Signup</button></div>
         </div>
     </form>
 </div>

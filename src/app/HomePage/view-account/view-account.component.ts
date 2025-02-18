@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { apiUrls } from '../../Constants/globalConstants';
 import { ApiService } from '../../Services/api.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class ViewAccountComponent implements OnInit {
 
   getDataValue(){
 
-    this.api.getData().subscribe(
+    this.api.getData(apiUrls.UserApi).subscribe(
 
       (response:any)=>{
 

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { Router, RouterModule } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { apiUrls } from '../../Constants/globalConstants';
 import { ApiService } from '../../Services/api.service';
 
 @Component({
@@ -26,9 +27,9 @@ export class CreateAccountComponent {
           FirstName: new FormControl('', Validators.required),
           LastName: new FormControl('', Validators.required),
           UserName: new FormControl('', Validators.required),
-          Age: new FormControl(0),
+          Age: new FormControl(0, Validators.required),
           Gender: new FormControl('', Validators.required),
-          Email: new FormControl('', [Validators.email]),
+          Email: new FormControl('', [Validators.email, Validators.required]),
           ContactNumber: new FormControl(0, [Validators.minLength(10), Validators.required]),
           Password: new FormControl('', [Validators.minLength(8), Validators.required]),
           ConfirmPassword: new FormControl('', [Validators.minLength(8), Validators.required])
@@ -49,6 +50,7 @@ export class CreateAccountComponent {
     CreateData(){
 
       this.isSubmitted = true;
+      console.log("Func Called");
 
       if(this.validPassword() && this.registerForm.status=='VALID')
       {
@@ -64,7 +66,7 @@ export class CreateAccountComponent {
           ConfirmPassword : this.registerForm.get('ConfirmPassword')?.value,
           UserType:'Customer'
         }
-        this.api.create(request).subscribe(
+        this.api.create(apiUrls.UserApi,request).subscribe(
           ()=>{
             alert('Registration successfully....')
             this.router.navigate(['/login']);
