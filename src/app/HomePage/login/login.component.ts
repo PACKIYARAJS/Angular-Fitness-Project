@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { apiUrls } from '../../Constants/globalConstants';
@@ -9,7 +9,7 @@ import { ApiService } from '../../Services/api.service';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, NgbAlertModule, CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, NgbAlertModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
