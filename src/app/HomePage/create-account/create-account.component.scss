@@ -1,0 +1,41 @@
+.create{
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../images/images3.jpg);
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-weight: 1000;
+}
+.box{
+    width: 40%;
+    height: 100%;
+    box-shadow: 12px 12px 100px rgba(0, 0, 0, 50);
+    backdrop-filter: blur(2px);
+    border-radius: 10%;
+}
+input{
+    text-align: center;
+    margin-left: 30%;
+    border-radius: 20px;
+    width: 210px;
+    font-weight: 500;
+}
+p{
+    color: white;
+    margin-left: 30%
+}
+.gender{
+    margin-top: 0%;
+    margin-left:-5%;
+    height: 15px;
+}
+button{
+    margin-left: 40%;
+    background-color: limegreen;
+    margin-bottom: 10%;
+    border-radius: 20px;
+}
