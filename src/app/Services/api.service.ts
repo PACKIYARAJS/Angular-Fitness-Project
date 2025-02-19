@@ -25,4 +25,11 @@ export class ApiService {
     return this.http.delete(apiUrl+data);
   }
 
+  update(apiUrl:any, requestbody:any, dataId:any)
+  {
+    apiUrl +='/'+dataId; 
+
+    return this.http.put(apiUrl,requestbody)
+  }
+
 }

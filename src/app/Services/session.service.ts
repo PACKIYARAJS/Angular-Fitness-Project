@@ -8,17 +8,6 @@ export class SessionService {
 
   constructor(private router:Router) { }
 
-  // isSessinAvailable()
-  // {
-  //   let UserID =  sessionStorage.getItem('UserId') || '';
-
-  //   if(UserID='')
-  //   {
-  //     return false;
-  //   } 
-  //   return true;
-  // }
-
   LogoutSession()
   {
     sessionStorage.removeItem('UserId');
@@ -27,7 +16,7 @@ export class SessionService {
     
       this.router.navigate(['/login']);
     
-    }, 3000);
+    }, 1000);
   }
 
   validateUser()
