@@ -1,0 +1,76 @@
+.Diet{
+    background-color: gainsboro;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+.screen{
+    height: 100vh;
+    width: 100%;
+}
+h1{
+    font-weight: 1000;
+}
+p{
+    font-style: italic;
+    font-weight: 500;
+}
+.box{
+    margin-left: 5%;
+}
+.box h1{
+    text-align: center;
+}
+h3{
+    font-weight: 1000;
+}
+.img{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.h{
+    margin-top: 20%;
+}
+.text{
+    margin-right: 20%;
+}
+.water{
+    margin-left: 5%;
+}
+.water p{
+    margin-right: 5%;
+}
+.box1 h1{
+    text-align: center;
+}
+.box1 p{
+    margin-left: 5%;
+    margin-top: 15%;
+    margin-right: 5%;
+}
+.p{
+    margin-right: 5%;
+}
+.para{
+    margin-top: 15%;
+}
+.imge{
+    width: 600px;
+    margin-top: 10%;
+}
+.suggestion{
+    margin-left: 5%;
+}
+.suggestion img{
+    width: 700px;
+}
+.suggestion li{
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+.suggestion p{
+    margin-top: -1%;
+}
