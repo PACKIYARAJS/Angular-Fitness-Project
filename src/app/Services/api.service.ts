@@ -32,4 +32,11 @@ export class ApiService {
     return this.http.put(apiUrl,requestbody)
   }
 
+  patchData(apiUrl:any, requestbody:any, dataId:any)
+  {
+    apiUrl +='/'+dataId;
+
+    return this.http.patch(apiUrl, requestbody)
+  }
+
 }
