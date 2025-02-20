@@ -53,7 +53,7 @@ export class LoginComponent {
             alert("Login Successfull...");
             sessionStorage.setItem('User',this.LoginForm.get('UserName')?.value );
             sessionStorage.setItem('UserId', responseData[0].id);
-            this.router.navigate(['training']);
+            this.router.navigate(['home']);
           }else{
             this.errMsg = 'Invalid Username or password.';
           }

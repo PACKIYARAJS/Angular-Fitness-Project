@@ -5,7 +5,7 @@
                 <strong>Success!</strong> User Registered Successfully.
             </ngb-alert>            
         </div>
-        <div class="container box mt-5">
+        <div class="container box mt-3">
             <h1 class="mt-4">Create Account</h1>
 
             <div class="mt-4"><input type="text" id="FirstName" placeholder="Enter the First Name" name="FirstName" formControlName ="FirstName"/>
@@ -26,6 +26,7 @@
             <div class="mt-4"><input type="number" id="Age" placeholder="Enter the Age" name="Age" formControlName ="Age"/>
                 <div *ngIf="registerForm.get('Age')?.hasError('required') && isSubmitted" class="text-danger"> Enter the age</div>
             </div>
+            
             <div class="row mt-4">
                 <p class="col">Male</p> <input class="gender" type="radio" id="mGender" name="Gender" value="Male" formControlName ="Gender"/>
                 <p class="col">Female</p> <input class="gender" type="radio" id="FGender" name="Gender" value="Female" formControlName ="Gender"/>
@@ -46,10 +47,11 @@
             <div class="mt-4"><input type="password" id="ConfirmPassword" placeholder="Enter the Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
                 <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('required') && isSubmitted" class="text-danger"> Confirm Password should have a minimum lenght of 8 characters</div>
             </div>
-        <div class="row mt-4">
-            <div class="col"><button type="reset" class="btn btn-success">Reset</button></div>
-            <div class="col"><button type="button" class="btn btn-success" (click)="CreateData()">Signup</button></div>
-        </div>
+            
+            <div class="row mt-4">
+                <div class="col"><button type="reset" class="btn btn-success">Reset</button></div>
+                <div class="col"><button type="button" class="btn btn-success" (click)="CreateData()">Signup</button></div>
+            </div>
         </div>
     </form>
 </div>

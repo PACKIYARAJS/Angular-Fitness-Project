@@ -27,10 +27,10 @@ export class CreateAccountComponent {
           FirstName: new FormControl('', Validators.required),
           LastName: new FormControl('', Validators.required),
           UserName: new FormControl('', Validators.required),
-          Age: new FormControl(0, Validators.required),
+          Age: new FormControl('', Validators.required),
           Gender: new FormControl('', Validators.required),
           Email: new FormControl('', [Validators.email, Validators.required]),
-          ContactNumber: new FormControl(0, [Validators.minLength(10), Validators.required]),
+          ContactNumber: new FormControl('', [Validators.minLength(10), Validators.required]),
           Password: new FormControl('', [Validators.minLength(8), Validators.required]),
           ConfirmPassword: new FormControl('', [Validators.minLength(8), Validators.required])
         }

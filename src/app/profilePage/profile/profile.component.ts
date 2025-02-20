@@ -49,7 +49,7 @@ export class ProfileComponent implements OnInit {
 
   UpdateData(account:any){
 
-    console.log(account)
+    console.log(account);
 
     this.api.update(apiUrls.UserApi,account,this.UserId).subscribe
     (
