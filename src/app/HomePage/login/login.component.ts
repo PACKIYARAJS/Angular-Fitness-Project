@@ -26,7 +26,7 @@ export class LoginComponent {
     this.LoginForm = new FormGroup(
       {
         UserName : new FormControl('',Validators.required),
-        Password : new FormControl('', Validators.required)
+        Password : new FormControl('', [Validators.minLength(8),Validators.required])
       }
     );
 
@@ -39,6 +39,8 @@ export class LoginComponent {
 
   checkLogin()
   {
+    console.log(this.LoginForm);
+
     this.errMsg = '';
 
     this.isSubmitted = true;

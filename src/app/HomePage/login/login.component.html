@@ -17,6 +17,7 @@
                 <div class="colinput col">
                     <input type="text" id="Password" name="Password" placeholder="Enter the Password" class="form-control" formControlName="Password"/>
                     <div *ngIf="LoginForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger">Kindly enter the Password</div>
+                    <div *ngIf="LoginForm.get('Password')?.hasError('minlength')" class="text-danger">Password must be 8 characters</div>
                 </div>
             </div>
             <div class="row mt-4">
