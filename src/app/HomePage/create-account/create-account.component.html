@@ -23,8 +23,8 @@
             </div>
         
        
-            <div class="mt-4"><input type="number" id="Age" placeholder="Enter the Age" name="Age" formControlName ="Age"/>
-                <div *ngIf="registerForm.get('Age')?.hasError('required') && isSubmitted" class="text-danger"> Enter the age</div>
+            <div class="mt-4"><input type="date" id="Age" placeholder="Enter the Age" name="Age" formControlName ="Age"/>
+                <div *ngIf="registerForm.get('Age')?.hasError('required') && isSubmitted" class="text-danger"> Age is Mandatory</div>
             </div>
             
             <div class="row mt-4">
