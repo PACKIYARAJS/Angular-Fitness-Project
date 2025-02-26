@@ -30,7 +30,7 @@ export class CreateAccountComponent {
           Age: new FormControl('', Validators.required),
           Gender: new FormControl('', Validators.required),
           Email: new FormControl('', [Validators.email, Validators.required]),
-          ContactNumber: new FormControl('', [Validators.minLength(10), Validators.required]),
+          ContactNumber: new FormControl('', [Validators.minLength(10), Validators.maxLength(10), Validators.required]),
           Password: new FormControl('', [Validators.minLength(8), Validators.required]),
           ConfirmPassword: new FormControl('', [Validators.minLength(8), Validators.required])
         }
@@ -51,6 +51,7 @@ export class CreateAccountComponent {
 
       this.isSubmitted = true;
       console.log("Func Called");
+      console.log(this.registerForm);
 
       if(this.validPassword() && this.registerForm.status=='VALID')
       {
@@ -63,7 +64,6 @@ export class CreateAccountComponent {
           Email : this.registerForm.get('Email')?.value,
           ContactNumber : this.registerForm.get('ContactNumber')?.value,
           Password : this.registerForm.get('Password')?.value,
-          ConfirmPassword : this.registerForm.get('ConfirmPassword')?.value,
           UserType:'Customer'
         }
         this.api.create(apiUrls.UserApi,request).subscribe(

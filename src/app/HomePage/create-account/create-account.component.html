@@ -36,16 +36,19 @@
                 <div *ngIf="registerForm.get('Email')?.hasError('required') && isSubmitted" class="text-danger"> Email is Mandatory</div>
             </div>
         
-            <div class="mt-4"><input type="number" id="ContactNumber" placeholder="Enter the Contact Number" name="ContactNumber" formControlName ="ContactNumber"/>
-                <div *ngIf="registerForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger"> Contact number should have a 10 numbers</div>                
-            </div>
+            <div class="mt-4"><input type="text" id="ContactNumber" placeholder="Enter the Contact Number" name="ContactNumber" formControlName ="ContactNumber"/>
+                <div *ngIf="registerForm.get('ContactNumber')?.hasError('required') && isSubmitted" class="text-danger">Contact number is Mandatory</div> 
+                <div *ngIf="registerForm.get('ContactNumber')?.hasError('minlength')" class="text-danger">Contact number should have a 10 digits</div>               
+            </div>  
        
             <div class="mt-4"><input type="password" id="Password" placeholder="Enter the Password" name="Password" formControlName ="Password"/>
-                <div *ngIf="registerForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger"> Password should have a minimum lenght of 8 characters</div>
+                <div *ngIf="registerForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger"> Password is Mandatory</div>
+                <div *ngIf="registerForm.get('Password')?.hasError('minlength')" class="text-danger"> Password should have a minimum lenght of 8 characters</div>
             </div>
         
             <div class="mt-4"><input type="password" id="ConfirmPassword" placeholder="Enter the Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
-                <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('required') && isSubmitted" class="text-danger"> Confirm Password should have a minimum lenght of 8 characters</div>
+                <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('required') && isSubmitted" class="text-danger"> Confirm Password is Mandatory</div>
+                <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('minlength')" class="text-danger">Confirm password should have a minimum length of 8 characters</div>
             </div>
             
             <div class="row mt-4">
