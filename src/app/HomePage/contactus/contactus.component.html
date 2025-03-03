@@ -1,1 +1,32 @@
-<p>contactus works!</p>
+<div [ngClass]="['Contact']">
+    <div class="row box">
+        <div class="col">
+            <img [src]="image">
+        </div>
+        <div class="col con">
+            <form [formGroup]="ContactUS">
+                <div>
+                    <h1 [ngStyle]="{'color': 'white', 'font-weight': '1000', 'font-size' : '90px'}">Contact us</h1>
+                    <div class="mt-5">
+                        <input type="email" name="email" id="email" placeholder="Enter the Email" formControlName ="email">
+                        <div *ngIf="ContactUS.get('email')?.hasError('required') && isSubmitted" class="text-danger">Email is Mandatory</div>
+                        <div *ngIf="ContactUS.get('email')?.hasError('email')" class="text-danger">Email format *****&#64;gmail.com</div>
+                    </div>
+                    <div class="mt-4">
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Enter the Phone Number" formControlName="phoneNumber">
+                        <div *ngIf="ContactUS.get('phoneNumber')?.hasError('required') && isSubmitted" class="text-danger"> Phone Number is Mandatory</div>
+                        <div *ngIf="ContactUS.get('phoneNumber')?.hasError('minlength')" class="text-danger">Phone Number must be 10 number </div>
+                        <div *ngIf="ContactUS.get('phoneNumber')?.hasError('maxlength')" class="text-danger">Phone Number must be 10 number </div>
+                    </div>
+                    <div class="mt-4">
+                        <textarea name="text" id="text" placeholder="Enter the Massage" formControlName="text"></textarea>
+                        <div *ngIf="ContactUS.get('text')?.hasError('required') && isSubmitted" class="text-danger">Message is Mandatory</div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-success" (click)="GoToSubmit()">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
