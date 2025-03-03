@@ -1,4 +1,70 @@
 <div class="Aboutus">
-  <h1 class="mt-5">Aboutus</h1>
+  <h1 class="mt-4">Aboutus</h1>
+  <div class="row mt-5 ms-4">
+    <div class="col ms-4 text-content">
+      <p>
+        We represent a global community of health and fitness professionals committed to building their businesses and improving their communities' health and well-being.
+        Thousands of fitness facilities, millions of people all working toward one goal: helping more people get active.
+      </p>
+      <h2>Universal Fitness</h2>
+      <ul>
+        <li>A leading gym equipment manufacturer in India that provides fitness equipment for homes, gyms, and other facilities</li>
+        <li>Founded in 1978 by Bahadar Singh, the company aims to help Indians live healthier lives</li>
+        <li>The company's equipment is designed to help users achieve smooth and fast workouts</li>
+      </ul>
+      <h2>Fitness</h2>
+      <p>A broad term that refers to your overall health and well-being, including physical, emotional, and mental health 
+        Fitness can also refer to your ability to perform daily tasks without undue fatigue 
+        Some components of fitness include:
+      </p>
+      <ul>
+        <li> Cardiorespiratory fitness</li>
+        <li>Musculoskeletal fitness </li>
+        <li>Flexibility</li>
+        <li>Balance</li>
+        <li>Muscular strength</li>
+        <li>Muscular endurance</li>
+        <li>Cardiovascular endurance</li>
+        <li>Body fat composition</li>
+      </ul>
+    </div>
+    <div class="col"><img src="../assets/images2.jpg"/></div>
+  </div>
+  <div class="row ver">
+    <div class="col" [ngClass]="['primary']">
+      <p [ngStyle]="{'font-size': '40px', 'font-weight': '700', 'font-style' : 'italic'}">Our Mission</p>
+      <p>To fostering community that embraces a healthy and active lifestyle, ensuring every member achieves their
+        fitness goal with support and expertise.
+      </p>
+    </div>
+    <div class="col">
+      <p [ngStyle]="{'font-size': '40px', 'font-weight': '700', 'font-style' : 'italic'}">Our vission</p>
+      <p>To fostering community that embraces a healthy and active lifestyle, ensuring every member achieves their
+          fitness goal with support and expertise.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <h2 [ngStyle]="{'font-style' : 'italic', 'margin-left' : '5%', 'margin-top' : '5%', 'font-size' : '40px'}">Rating</h2>
+    <div class="col mt-4" [ngStyle]="{'margin-left': '5%'}">
+      <ngb-rating [rate]=5/>
+      <p>The trainers provide good coaching and follow up regularly to help you stay on track. The gym is always clean and well-maintained, making it a comfortable place to exercise. Highly recommend it to anyone looking for a good gym in the area..</p>
+    </div>
+    <div class="col mt-4">
+      <ngb-rating [rate] =5/>
+      <p>Trainers are very knowledgeable and very supportive and whether one is new to gym or experience in lifting that's not a matters, they will help and motivate us from basic workouts and they do explain how the workouts will help to build our body and also the diet plans.
+        This gym is super affordable.
+        More spacious, well cleaned and maintained environment.</p>
+    </div>
+    <div class="col mt-4">
+      <ngb-rating [rate]=4/>
+      <p>As a beginner, I've found the gym's coaches to be incredibly friendly and supportive since my first day. I highly recommend this gym to both beginners and professionals. The equipment is clean and well-maintained.</p>
+    </div>
+    <div class="col mt-4 ms-4" [ngStyle]="{'margin-right':'5%'}">
+      <ngb-rating [rate]=5/>
+      <p>The trainers are wonderful, the machines are in great condition and the place is spotless. Safe space for women to workout too. The guidance here is just wonderful. All trainers always stay close and help you out and push you to become better.
+      </p>
+    </div>
+  </div>
   
 </div>
