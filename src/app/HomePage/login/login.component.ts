@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { apiUrls } from '../../Constants/globalConstants';
 import { ApiService } from '../../Services/api.service';
+import { SessionService } from '../../Services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { ApiService } from '../../Services/api.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
 
   LoginForm : FormGroup;
 
@@ -21,7 +22,13 @@ export class LoginComponent {
 
   errMsg : string ='';
 
-  constructor(private router : Router, private api: ApiService){
+  ngOnInit(): void {
+
+    this.alreadylogin();
+  
+  }
+
+  constructor(private router : Router, private api: ApiService, private session : SessionService){
 
     this.LoginForm = new FormGroup(
       {
@@ -65,6 +72,24 @@ export class LoginComponent {
           this.errMsg = 'An error occurred. Kindly try again later.';
         }
       );
+    }
+  }
+
+  alreadylogin()
+  {
+    if(sessionStorage.getItem('UserId'))
+    {
+      let ok = confirm('You have already logined...\nIf you want to logout.\nClick ok button');
+
+      if(ok)
+      {
+        this.router.navigate(['profile']);
+      }
+      else{
+        this.router.navigate(['home']);
+      }
+
+     
     }
   }
 }
