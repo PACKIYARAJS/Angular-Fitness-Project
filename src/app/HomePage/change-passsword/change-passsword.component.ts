@@ -31,7 +31,7 @@ export class ChangePassswordComponent implements OnInit{
   {
     this.changepass = new FormGroup(
       {
-        OTP : new FormControl('',[Validators.minLength(4) , Validators.required]),
+        OTP : new FormControl('',[Validators.minLength(4), Validators.maxLength(4) , Validators.required]),
 
         Password : new FormControl('', [Validators.minLength(8) , Validators.required]),
 

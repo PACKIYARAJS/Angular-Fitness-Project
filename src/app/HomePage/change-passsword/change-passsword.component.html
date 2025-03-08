@@ -9,8 +9,10 @@
             <h1>Forget Password</h1>
             <div class="row">
                 <div class="col">
-                    <input type="number" id="OTP" name="OTP" placeholder="Enter the OTP Number" class="form-control" formControlName="OTP"/>
+                    <input type="text" id="OTP" name="OTP" placeholder="Enter the OTP Number" class="form-control" formControlName="OTP"/>
                     <div *ngIf="changepass.get('OTP')?.hasError('required') && submitted" class="text-danger">Must be enter the OTP Number</div>
+                    <div *ngIf="changepass.get('OTP')?.hasError('minlength')" class="text-danger">OTP must be 4 digits</div>
+                    <div *ngIf="changepass.get('OTP')?.hasError('maxlength')" class="text-danger">OTP must be 4 digits</div>
                 </div>
             </div>
 
@@ -18,6 +20,7 @@
                 <div class="col">
                     <input type="password" id="Password" name="Password" placeholder="Enter the New Password" class="form-control" formControlName="Password"/>
                     <div *ngIf="changepass.get('Password')?.hasError('required') && submitted" class="text-danger">New Password must be 8 characters</div>
+                    <div *ngIf="changepass.get('Password')?.hasError('minlength')" class="text-danger">Password must be 8 characters</div>
                 </div>
             </div>
 
@@ -25,6 +28,7 @@
                 <div class="col">
                     <input type="password" id="ConfirmPass" name="ConfirmPass" placeholder="Enter the Confirm Password" class="form-control" formControlName="ConfirmPass"/>
                     <div *ngIf="changepass.get('ConfirmPass')?.hasError('required') && submitted" class="text-danger">Confirm Password must be 8 characters</div>
+                    <div *ngIf="changepass.get('ConfirmPass')?.hasError('minlength')" class="text-danger">Confirm   Password must be 8 characters</div>
                 </div>
             </div>
 
