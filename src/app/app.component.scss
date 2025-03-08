@@ -23,7 +23,7 @@ img{
 .navbar-nav a{
     font-size: larger;
     font-weight: 500;
-    color: rgb(230, 227, 227) !important;
+    color: rgb(230, 227, 227);
     text-decoration:2px underline transparent;
     box-sizing: border-box;
 }
@@ -43,4 +43,10 @@ nav .profile{
 }
 #navbarSupportedContent{
     margin-left: 7%;
+}
+.active
+{
+    color: limegreen !important;
+
+    font-weight:800 !important ;
 }
