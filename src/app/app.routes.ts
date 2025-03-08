@@ -32,5 +32,4 @@ export const routes: Routes = [
     {path : 'footer', component: FooterComponent},
     {path : 'forget-password', component: ForgetPasswordComponent},
     {path : 'change-passsword', component: ChangePassswordComponent}
-    
 ];

@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { getEnvironmentData } from 'worker_threads';
+import { apiUrls } from '../../Constants/globalConstants';
+import { ApiService } from '../../Services/api.service';
 
 @Component({
   selector: 'app-contactus',
@@ -17,7 +21,7 @@ export class ContactusComponent {
 
   isSubmitted : boolean = false;
 
-  constructor()
+  constructor(private router : Router, private api: ApiService)
   {
     this.ContactUS = new FormGroup(
       {
@@ -40,15 +44,24 @@ export class ContactusComponent {
   {
     let request = {
 
-      email : this.ContactUS.get('email')?.value,
+      Email : this.ContactUS.get('email')?.value,
 
-      phoneNumber : this.ContactUS.get('phoneNumber')?.value,
+      PhoneNumber : this.ContactUS.get('phoneNumber')?.value,
 
-      Massage : this.ContactUS.get('text')?.value
+      Msg : this.ContactUS.get('text')?.value
     }
-    alert('Message sended successfully....');
 
+    this.api.create(apiUrls.MsgApi,request).subscribe(
+
+      ()=>{
+        alert('Message sended successfully....');
+      },
+      err =>{console.log(err)}
+
+    );   
   }
 }
+
+  
 
 }

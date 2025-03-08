@@ -35,4 +35,25 @@
             </tr>
         </tbody>
     </table>
+</div><br>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let msg of msgs">
+                <td>{{msg.id}}</td>
+                <td>{{msg.PhoneNumber}}</td>
+                <td>{{msg.Email}}</td>
+                <td>{{msg.Msg}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="Deletemsg(msg)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
