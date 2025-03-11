@@ -39,7 +39,7 @@
         <div class="row mt-4">
             <div class="col colname">Contact Number</div>
             <div class="col">
-                <input type="text" [(ngModel)]="account.ContactNumber"/>
+                <input type="tel" [(ngModel)]="account.ContactNumber" pattern="[0-9]{10}"/>
             </div>
         </div>
 
