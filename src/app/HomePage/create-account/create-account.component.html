@@ -1,4 +1,4 @@
-<div class="create">
+<div class="create">    
     <form [formGroup] = 'registerForm'>
         <div class="row mt-4" *ngIf="isRegisterSuccess">
             <ngb-alert [dismissible]="false" type="success">
@@ -36,17 +36,18 @@
                 <div *ngIf="registerForm.get('Email')?.hasError('required') && isSubmitted" class="text-danger"> Email is Mandatory</div>
             </div>
         
-            <div class="mt-4"><input type="text" id="ContactNumber" placeholder="Enter the Contact Number" name="ContactNumber" formControlName ="ContactNumber"/>
+            <div class="mt-4"><input type="tel" id="ContactNumber" placeholder="Enter the Contact Number" name="ContactNumber" formControlName ="ContactNumber"
+                pattern="[0-9]{10}" required/>
                 <div *ngIf="registerForm.get('ContactNumber')?.hasError('required') && isSubmitted" class="text-danger">Contact number is Mandatory</div> 
-                <div *ngIf="registerForm.get('ContactNumber')?.hasError('minlength')" class="text-danger">Contact number should have a 10 digits</div>               
+                <div *ngIf="registerForm.get('ContactNumber')?.hasError('pattern')" class="text-danger">Contact number should have only Numerics and 10 digits</div>             
             </div>  
        
-            <div class="mt-4"><input type="password" id="Password" placeholder="Enter the Password" name="Password" formControlName ="Password"/>
+            <div class="mt-4"><input type="password" id="Password" placeholder="Enter the Password" name="Password" formControlName ="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[@#!$%^&_-.*])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,10}$"/>
                 <div *ngIf="registerForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger"> Password is Mandatory</div>
-                <div *ngIf="registerForm.get('Password')?.hasError('minlength')" class="text-danger"> Password should have a minimum lenght of 8 characters</div>
+                <div *ngIf="registerForm.get('Password')?.hasError('minlength')" class="text-danger"> `Password should have a minimum lenght of 8 characters in this format "Testing193$"`</div>
             </div>
         
-            <div class="mt-4"><input type="password" id="ConfirmPassword" placeholder="Enter the Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
+            <div class="mt-4"><input type="password" id="ConfirmPassword" placeholder="Enter the Confirm Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
                 <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('required') && isSubmitted" class="text-danger"> Confirm Password is Mandatory</div>
                 <div *ngIf="registerForm.get('ConfirmPassword')?.hasError('minlength')" class="text-danger">Confirm password should have a minimum length of 8 characters</div>
             </div>
