@@ -25,6 +25,8 @@ export class ContactusComponent {
   {
     this.ContactUS = new FormGroup(
       {
+        Name : new FormControl('', [Validators.required]),
+
         email : new FormControl('', [Validators.email, Validators.required]),
 
         phoneNumber : new FormControl('', [Validators.minLength(10), Validators.maxLength(10), Validators.required]),
@@ -44,6 +46,8 @@ export class ContactusComponent {
   {
     let request = {
 
+      Name : this.ContactUS.get('Name')?.value,
+
       Email : this.ContactUS.get('email')?.value,
 
       PhoneNumber : this.ContactUS.get('phoneNumber')?.value,
@@ -54,7 +58,7 @@ export class ContactusComponent {
     this.api.create(apiUrls.MsgApi,request).subscribe(
 
       ()=>{
-        alert('Message sended successfully....');
+        alert('Message sended successfully\nOur team will contact you soon....');
       },
       err =>{console.log(err)}
 
