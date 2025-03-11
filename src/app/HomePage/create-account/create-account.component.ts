@@ -64,7 +64,7 @@ export class CreateAccountComponent {
           Email : this.registerForm.get('Email')?.value,
           ContactNumber : this.registerForm.get('ContactNumber')?.value,
           Password : this.registerForm.get('Password')?.value,
-          UserType:'Customer'
+          UserType:'Normal'
         }
         this.api.create(apiUrls.UserApi,request).subscribe(
           ()=>{

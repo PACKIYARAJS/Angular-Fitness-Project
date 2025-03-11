@@ -11,6 +11,7 @@ import { HomeComponent } from './HomePage/home/home.component';
 import { LoginComponent } from './HomePage/login/login.component';
 import { LogoutComponent } from './HomePage/logout/logout.component';
 import { MemberShipComponent } from './HomePage/member-ship/member-ship.component';
+import { SubscriptionComponent } from './HomePage/subscription/subscription.component';
 import { TrainingComponent } from './HomePage/training/training.component';
 import { ViewAccountComponent } from './HomePage/view-account/view-account.component';
 import { ProfileComponent } from './profilePage/profile/profile.component';
@@ -29,7 +30,8 @@ export const routes: Routes = [
     {path : 'training', component : TrainingComponent},
     {path : 'diet', component : DietComponent},
     {path : 'profile', component : ProfileComponent},
-    {path : 'footer', component: FooterComponent},
-    {path : 'forget-password', component: ForgetPasswordComponent},
-    {path : 'change-passsword', component: ChangePassswordComponent}
+    {path : 'footer', component : FooterComponent},
+    {path : 'forget-password', component : ForgetPasswordComponent},
+    {path : 'change-passsword', component : ChangePassswordComponent},
+    {path : 'subscription', component : SubscriptionComponent}
 ];

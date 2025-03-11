@@ -3,7 +3,8 @@
 <button type="button" class="btn btn-primary" (click)="showData = !showData">Show Data</button>
 
 <div class="container mt-4">
-    <table class="table table-bordered table-striped">
+    <h2>Register Users</h2>
+    <table class="table table-bordered table-striped mt-5">
         <thead>
             <tr>
                 <th>Id</th>
@@ -37,10 +38,12 @@
     </table>
 </div><br>
 <div class="container">
-    <table class="table table-bordered">
+    <h2>Message from Users</h2>
+    <table class="table table-bordered mt-5">
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Name</th>
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Message</th>
@@ -49,6 +52,7 @@
         <tbody>
             <tr *ngFor="let msg of msgs">
                 <td>{{msg.id}}</td>
+                <td>{{msg.Name}}</td>
                 <td>{{msg.PhoneNumber}}</td>
                 <td>{{msg.Email}}</td>
                 <td>{{msg.Msg}}</td>
