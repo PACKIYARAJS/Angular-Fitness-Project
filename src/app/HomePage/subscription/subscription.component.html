@@ -1,0 +1,12 @@
+<main>
+    <article [ngClass]="['container']">
+        <section>
+            <figure *ngFor="let content of contents">
+                <h2>{{content.price | currency:'INR'}}</h2>
+                <img [src]="content.img" alt="" width="400" height="400">
+                <figcaption [innerHTML]='content.content'></figcaption>
+                <button [ngStyle]="{'margin' : '2% 0 0 45%', 'backgroundColor': 'limegreen'}" type="button" (click)="nav()">Subscription</button>
+            </figure>
+        </section>
+    </article>
+</main>
