@@ -9,12 +9,13 @@ fieldset{
     font-size: 1.2rem;
     font-weight: 700;
     padding: 2em;
-    margin: 5% 35%;
+    margin: 3% 0 0 0 ;
     background: transparent;
     color: white;
-    box-shadow: 12px 12px 100px rgba(0,0,0,50);
+    box-shadow: 12px 12px 100px rgba(255,0,0,1);
     backdrop-filter: blur(2px);
     border-radius: 10%;
+    width: 500px;
 }
 fieldset label{
     margin-left: 5%;
@@ -37,4 +38,9 @@ button
 {
     margin: 3% 0 0 40%;
     background-color: limegreen;
+}
+img{
+    float: left;
+    margin: 2% 5% 0 8%;
+    display: flow-root;
 }
