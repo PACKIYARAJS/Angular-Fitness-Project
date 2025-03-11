@@ -1,0 +1,40 @@
+.MemberShip
+{
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(../images/images3.jpg);
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+fieldset{
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 2em;
+    margin: 5% 35%;
+    background: transparent;
+    color: white;
+    box-shadow: 12px 12px 100px rgba(0,0,0,50);
+    backdrop-filter: blur(2px);
+    border-radius: 10%;
+}
+fieldset label{
+    margin-left: 5%;
+}
+input
+{
+    text-align: center;
+    width: 300px;
+    margin: 3% 0 0 15%;
+    background-color:black;
+    color: whitesmoke;
+    opacity: 0.8;
+}
+select{
+    font-size: 1em;
+    margin: 3% 0 0 15%;
+    width: 300px;
+}
+button 
+{
+    margin: 3% 0 0 40%;
+    background-color: limegreen;
+}

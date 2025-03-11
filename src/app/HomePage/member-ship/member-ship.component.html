@@ -1,1 +1,38 @@
-<p>member-ship works!</p>
+<main [ngClass]="['MemberShip']">
+    <article>
+        <section *ngFor="let user of getdata">
+            <fieldset>
+                <legend><h1 [ngStyle]="{'font-weight': '1000', 'font-style': 'italic', 'text-align': 'center',
+                                        'margin-top' : '-5%', 'font-size': '40px'}">MemberShip</h1></legend>
+                <form [formGroup]= 'joinnow'>
+                    <p class="row">
+                        <label for="Age">Full Name: </label>
+                        <input type="text" value="{{user.FirstName}} {{user.LastName}}" disabled>
+                    </p>
+                    <p class="row">
+                        <label for="Name">User Name: </label>
+                        <input type="text" value="{{user.UserName}}" disabled>
+                    </p>
+                    <p class="row">
+                        <label for="Number">Phone Number: </label>
+                        <input type="text" value="{{user.ContactNumber}}" disabled>
+                    </p>
+                    <p class="row">
+                        <label for="Email">Email: </label>
+                        <input type="text" value="{{user.Email}}" disabled>
+                    </p>
+                    <div class="row">
+                        <label for="PayAmount">Offers: </label>
+                        <select name="PayAmount" id="PayAmount" formControlName="PayAmount">
+                            <option *ngFor="let offer of offers" value="{{offer.Price | currency:'INR'}}">{{offer.month}}Months - {{offer.Price | currency : 'INR'}} </option>
+                        </select>
+
+                        <p *ngIf="joinnow.get('PayAmount')?.hasError('required') && isSubmitted" [ngStyle]="{'text-align':'center'}" class="text-danger">Kindly Select Offers</p>
+                        
+                    </div>
+                    <p><button type="button" (click)="Subscription()">Join now</button></p>
+                </form>
+            </fieldset>
+        </section>
+    </article>
+    </main>
