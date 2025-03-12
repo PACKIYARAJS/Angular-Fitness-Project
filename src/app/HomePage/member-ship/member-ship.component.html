@@ -25,15 +25,29 @@
                     <div class="row">
                         <label for="PayAmount">Offers: </label>
                         <select name="PayAmount" id="PayAmount" formControlName="PayAmount">
-                            <option *ngFor="let offer of offers" value="{{offer.Price | currency:'INR'}}">{{offer.month}}Months - {{offer.Price | currency : 'INR'}} </option>
+                            <option *ngFor="let offer of offers" [value]="offer.Price | currency:'INR'">{{offer.month}}Months - {{offer.Price | currency : 'INR'}} </option>
                         </select>
 
                         <p *ngIf="joinnow.get('PayAmount')?.hasError('required') && isSubmitted" [ngStyle]="{'text-align':'center'}" class="text-danger">Kindly Select Offers</p>
                         
                     </div>
-                    <p><button type="button" (click)="Subscription()">Join now</button></p>
+                    <p><button type="button" (click)="openBackDropCustomClass(content)">Pay Amount</button></p>
                 </form>
             </fieldset>
         </section>
     </article>
     </main>
+
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Payment Process</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <p>Your payment amount {{value}}</p>
+            <input type="number" min="2999" max="9999" step="1000" placeholder="Confirm payment" [(ngModel)]="confirmPayment">
+        </div>
+        <div class="modal-footer">
+            <button type="button" (click)="Subscription()">Pay now</button>
+        </div>
+    </ng-template>

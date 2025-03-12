@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, CurrencyPipe } from '@angular/common';
+import { Component, OnInit, inject, TemplateRef, model } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { apiUrls } from '../../Constants/globalConstants';
 import { ApiService } from '../../Services/api.service';
 import { SessionService } from '../../Services/session.service';
@@ -11,14 +12,20 @@ import { SessionService } from '../../Services/session.service';
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './member-ship.component.html',
-  styleUrl: './member-ship.component.scss'
+  styleUrl: './member-ship.component.scss',
+  providers : [CurrencyPipe]
 })
 export class MemberShipComponent implements OnInit{
 
   joinnow : FormGroup;
+
   isSubmitted : boolean = false;
 
-  constructor(private router : Router, private session: SessionService, private api : ApiService)
+  errMsg :any ;
+
+  value : any;
+
+  constructor(private router : Router, private session: SessionService, private api : ApiService, private currency : CurrencyPipe)
   {
     this.joinnow = new FormGroup(
       {
@@ -66,27 +73,52 @@ export class MemberShipComponent implements OnInit{
     {
       month : 12, Price : 9999
     },
-  ]
+  ];
+
+    private modalService = inject(NgbModal);
+
+    confirmPayment : any ;
+  
+  openBackDropCustomClass(content: TemplateRef<any>) 
+  {
+      this.isSubmitted = true;
+
+      if(this.joinnow.status == "VALID")
+      {
+        this.value = this.joinnow.get('PayAmount')?.value;
+
+        this.modalService.open(content, { backdropClass: 'light-blue-backdrop' });
+      }
+  }
 
   Subscription()
   {
-    this.isSubmitted = true;
-    
-    if(this.joinnow.status == "VALID")
+    const confirmAmount = this.currency.transform(this.confirmPayment, 'INR')
+
+    console.log(this.value, confirmAmount);
+
+    if(this.value == confirmAmount)
     {
-        let request =
+      let request =
         {
             UserType : `Subscriber ${this.joinnow.get('PayAmount')?.value}`
         }
 
-        this.api.patchData(apiUrls.UserApi, request, this.userID).subscribe
-        (
-          ()=>{
-            alert('You are now Subscriber!');
-          },
-          err => {console.log(err)}
+      this.api.patchData(apiUrls.UserApi, request, this.userID).subscribe
+      (
+        ()=>{
+          alert('You are now Subscriber!\nOur team contact you soon...');
+          
+          this.modalService.dismissAll();
 
-        );
-      }
+          this.router.navigate(['home']);
+        },
+        err => {console.log(err)}
+      );
     }
+      else
+      {
+        alert("kindly enter the correct amount");
+      }
+  }
 }
