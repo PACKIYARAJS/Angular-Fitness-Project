@@ -42,9 +42,9 @@
                 <div *ngIf="registerForm.get('ContactNumber')?.hasError('pattern')" class="text-danger">Contact number should have only Numerics and 10 digits</div>             
             </div>  
        
-            <div class="mt-4"><input type="password" id="Password" placeholder="Enter the Password" name="Password" formControlName ="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[@#!$%^&_-.*])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,10}$"/>
+            <div class="mt-4"><input type="password" id="Password" placeholder="Enter the Password" name="Password" formControlName ="Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,10}$"/>
                 <div *ngIf="registerForm.get('Password')?.hasError('required') && isSubmitted" class="text-danger"> Password is Mandatory</div>
-                <div *ngIf="registerForm.get('Password')?.hasError('minlength')" class="text-danger"> `Password should have a minimum lenght of 8 characters in this format "Testing193$"`</div>
+                <div *ngIf="registerForm.get('Password')?.hasError('pattern')" class="text-danger"> Password should have a minimum lenght of 8 to 10 characters in this format "Testing193"</div>
             </div>
         
             <div class="mt-4"><input type="password" id="ConfirmPassword" placeholder="Enter the Confirm Password" name="ConfirmPassword" formControlName ="ConfirmPassword"/>
