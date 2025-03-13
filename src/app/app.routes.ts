@@ -9,7 +9,6 @@ import { DietComponent } from './HomePage/diet/diet.component';
 import { ForgetPasswordComponent } from './HomePage/forget-password/forget-password.component';
 import { HomeComponent } from './HomePage/home/home.component';
 import { LoginComponent } from './HomePage/login/login.component';
-import { LogoutComponent } from './HomePage/logout/logout.component';
 import { MemberShipComponent } from './HomePage/member-ship/member-ship.component';
 import { SubscriptionComponent } from './HomePage/subscription/subscription.component';
 import { TrainingComponent } from './HomePage/training/training.component';
@@ -20,8 +19,7 @@ export const routes: Routes = [
     {path :'', redirectTo:'home', pathMatch:'full'},
     {path : 'home', component:HomeComponent},
     {path : 'create-account', component : CreateAccountComponent},
-    {path : 'login', component : LoginComponent},
-    {path : 'logout', component : LogoutComponent},
+    {path : 'login', component : LoginComponent},   
     {path : 'member-ship', component : MemberShipComponent},
     {path : 'view-account', component : ViewAccountComponent},
     {path : 'admin-account', component : AdminAccountComponent},
