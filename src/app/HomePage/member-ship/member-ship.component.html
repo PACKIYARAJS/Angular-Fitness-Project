@@ -31,7 +31,7 @@
                         <p *ngIf="joinnow.get('PayAmount')?.hasError('required') && isSubmitted" [ngStyle]="{'text-align':'center'}" class="text-danger">Kindly Select Offers</p>
                         
                     </div>
-                    <p><button type="button" (click)="openBackDropCustomClass(content)">Pay Amount</button></p>
+                    <p><button type="button" [ngStyle]="{'background' : subscriber ? 'grey' : 'limegreen', 'color' : subscriber? 'white' : 'black'}" [innerText]="button" [disabled]="subscriber" (click)="openBackDropCustomClass(content)"></button></p>
                 </form>
             </fieldset>
         </section>

@@ -41,6 +41,8 @@ export class MemberShipComponent implements OnInit{
 
     this.getData();
 
+    this.Alreadysubscriber();
+
   }
 
   getdata : any ;
@@ -100,9 +102,9 @@ export class MemberShipComponent implements OnInit{
     if(this.value == confirmAmount)
     {
       let request =
-        {
-            UserType : `Subscriber ${this.joinnow.get('PayAmount')?.value}`
-        }
+      {
+        UserType : `Subscriber ${this.joinnow.get('PayAmount')?.value}`
+      }
 
       this.api.patchData(apiUrls.UserApi, request, this.userID).subscribe
       (
@@ -121,4 +123,26 @@ export class MemberShipComponent implements OnInit{
         alert("kindly enter the correct amount");
       }
   }
+
+  subscriber : boolean = false;
+
+  button : string = 'Pay Amount';
+
+  Alreadysubscriber()
+  {
+    this.api.getData(apiUrls.UserApi+this.userID).subscribe
+    (
+      (response : any)=>
+      {
+        if(response && response.UserType != 'Normal')
+        {
+          this.subscriber = true;
+
+          this.button = 'Subscribed';
+        }
+      },
+      err => {console.log(err);}
+    );
+  }
+
 }
