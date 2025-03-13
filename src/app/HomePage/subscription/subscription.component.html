@@ -5,7 +5,7 @@
                 <h2>{{content.price | currency:'INR'}}</h2>
                 <img [src]="content.img" alt="" width="400" height="400">
                 <figcaption [innerHTML]='content.content'></figcaption>
-                <button [ngStyle]="{'margin' : '2% 0 0 45%', 'backgroundColor': 'limegreen'}" type="button" (click)="nav()">Subscription</button>
+                <button [ngStyle]="{'margin' : '2% 0 0 45%', 'backgroundColor': subscriber ? 'grey' : 'limegreen', 'color' : subscriber? 'white' : 'black' }" type="button" [disabled]="subscriber" [innerText]="button" (click)="nav()"></button>
             </figure>
         </section>
     </article>

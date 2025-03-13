@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { apiUrls } from '../../Constants/globalConstants';
+import { ApiService } from '../../Services/api.service';
+import { SessionService } from '../../Services/session.service';
 
 @Component({
   selector: 'app-subscription',
@@ -9,9 +12,14 @@ import { Router } from '@angular/router';
   templateUrl: './subscription.component.html',
   styleUrl: './subscription.component.scss'
 })
-export class SubscriptionComponent {
 
-  constructor(private router : Router){}
+export class SubscriptionComponent implements OnInit{
+
+  ngOnInit(): void {
+    this.AlreadySubscribed();
+  }
+
+  constructor(private router : Router , private session : SessionService, private api : ApiService){}
 
   contents = [
     {
@@ -71,6 +79,28 @@ export class SubscriptionComponent {
   nav()
   {
     this.router.navigate(['member-ship']);
+  }
+
+  button : string = 'Subscription';
+
+  subscriber : boolean = false;
+
+  AlreadySubscribed()
+  {
+    const id = sessionStorage.getItem('UserId');
+
+    this.api.getData(apiUrls.UserApi+id).subscribe
+    (
+      (response:any)=>{
+        if(response && response.UserType !='Normal')
+        {
+            this.button = 'Subscribed';
+
+            this.subscriber = true;
+        }
+      },
+      err =>{console.log(err)}
+    );
   }
 
 }
