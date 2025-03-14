@@ -1,0 +1,19 @@
+{
+  "routes": [
+    "/aboutus",
+    "/admin-account",
+    "/change-passsword",
+    "/contactus",
+    "/create-account",
+    "/diet",
+    "/footer",
+    "/forget-password",
+    "/home",
+    "/login",
+    "/member-ship",
+    "/profile",
+    "/subscription",
+    "/training",
+    "/view-account"
+  ]
+}
