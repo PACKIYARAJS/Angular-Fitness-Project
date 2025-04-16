@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './HomePage/login/login.component';
 import { SessionService } from './Services/session.service';
 import { FooterComponent } from './footer/footer/footer.component';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
   
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, CreateAccountComponent, FormsModule, RouterModule, LoginComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, CreateAccountComponent, FormsModule, RouterModule, LoginComponent, FooterComponent, NgbCollapseModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit{
   title:String = 'Fitness';
 
   isSessionAvailable:boolean = false;
+
+  isNavbarCollapsed:boolean = true;
 
   //router: Router = new Router;  // Difficult way
 
